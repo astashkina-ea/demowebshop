@@ -6,6 +6,8 @@ import com.github.javafaker.Faker;
 import org.aeonbits.owner.ConfigFactory;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
@@ -16,6 +18,7 @@ import static com.demowebshop.api.GetAddresses.getAddresses;
 import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("api")
 public class AddressEditTests {
 
     private static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
@@ -25,6 +28,7 @@ public class AddressEditTests {
 
 
     @Test
+    @DisplayName("Add address")
     void addAddressTest() {
         String authCookieValue = LoginApi.getAuthCookie(emailValue, passwordValue);
 

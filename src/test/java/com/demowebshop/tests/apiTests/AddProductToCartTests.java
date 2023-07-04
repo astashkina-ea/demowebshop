@@ -7,6 +7,8 @@ import com.demowebshop.models.AddProductToCartResponse;
 import org.aeonbits.owner.ConfigFactory;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.demowebshop.api.AddProductToCartApi.addProductToCartWithAuth;
@@ -16,6 +18,7 @@ import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.*;
 
 
+@Tag("api")
 public class AddProductToCartTests {
 
     private static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
@@ -31,6 +34,7 @@ public class AddProductToCartTests {
             "&addtocart_72.EnteredQuantity=" + quantity;
 
     @Test
+    @DisplayName("Add product to cart as authorized")
     void addProductToCartAsAuthorizedTest() {
         String authCookieValue = LoginApi.getAuthCookie(emailValue, passwordValue);
 
@@ -50,6 +54,7 @@ public class AddProductToCartTests {
     }
 
     @Test
+    @DisplayName("Add product to cart as anonym")
     void addProductToCartAsAnonymTest() {
         AddProductToCartResponse addProductToCartResponse = addProductToCartWithUnAuth(data);
 

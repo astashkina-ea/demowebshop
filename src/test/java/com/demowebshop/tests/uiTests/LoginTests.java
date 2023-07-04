@@ -1,6 +1,5 @@
 package com.demowebshop.tests.uiTests;
 
-import com.codeborne.selenide.Condition;
 import com.demowebshop.api.LoginApi;
 import com.demowebshop.config.CredentialsConfig;
 import com.demowebshop.pages.MainPage;
@@ -8,6 +7,8 @@ import com.demowebshop.pages.component.HeaderComponent;
 import com.demowebshop.pages.component.LoginComponent;
 import com.demowebshop.tests.UiTestBase;
 import org.aeonbits.owner.ConfigFactory;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Cookie;
 
@@ -15,6 +16,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.demowebshop.api.LoginApi.authCookieKey;
 
+@Tag("ui")
 public class LoginTests extends UiTestBase {
 
     private static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
@@ -27,6 +29,7 @@ public class LoginTests extends UiTestBase {
     String passwordValue = config.getPasswordAccount();
 
     @Test
+    @DisplayName("Login from web")
     void loginTest() {
         loginComponent.openPage()
                 .fillLoginForm(emailValue, passwordValue);
@@ -34,6 +37,7 @@ public class LoginTests extends UiTestBase {
     }
 
     @Test
+    @DisplayName("Login from api")
     void loginWithApiTest() {
         String authCookieValue = LoginApi.getAuthCookie(emailValue, passwordValue);
 

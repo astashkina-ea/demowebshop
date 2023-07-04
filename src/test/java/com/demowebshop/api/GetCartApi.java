@@ -2,8 +2,6 @@ package com.demowebshop.api;
 
 import io.qameta.allure.Step;
 
-import java.util.Map;
-
 import static com.demowebshop.api.LoginApi.authCookieKey;
 import static com.demowebshop.specs.Specs.requestSpec;
 import static com.demowebshop.specs.Specs.response200Spec;

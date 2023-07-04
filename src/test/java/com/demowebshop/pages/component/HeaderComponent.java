@@ -11,7 +11,7 @@ public class HeaderComponent {
     private SelenideElement accountLink = $(".account");
 
     @Step("Check successful authorization")
-    public HeaderComponent checkSuccessfulAuth(String login) {
+    public HeaderComponent checkSuccessFulAuth(String login) {
         accountLink.shouldHave(Condition.text(login));
         return this;
     }

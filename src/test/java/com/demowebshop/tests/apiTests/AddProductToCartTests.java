@@ -28,6 +28,7 @@ public class AddProductToCartTests {
 
     int numberOfItems;
     int quantity = 3;
+
     String data = "product_attribute_72_5_18=52" +
             "&product_attribute_72_6_19=54" +
             "&product_attribute_72_3_20=58" +
@@ -37,7 +38,6 @@ public class AddProductToCartTests {
     @DisplayName("Add product to cart as authorized")
     void addProductToCartAsAuthorizedTest() {
         String authCookieValue = LoginApi.getAuthCookie(emailValue, passwordValue);
-
         String page = getCart(authCookieValue);
 
         Document document = Jsoup.parse(page);

@@ -33,7 +33,7 @@ public class LoginTests extends UiTestBase {
     void loginTest() {
         loginComponent.openPage()
                 .fillLoginForm(emailValue, passwordValue);
-        headerComponent.checkSuccessfulAuth(emailValue);
+        headerComponent.checkSuccessFulAuth(emailValue);
     }
 
     @Test
@@ -46,6 +46,6 @@ public class LoginTests extends UiTestBase {
         getWebDriver().manage().addCookie(authCookie);
 
         mainPage.openPage();
-        headerComponent.checkSuccessfulAuth(emailValue);
+        headerComponent.checkSuccessFulAuth(emailValue);
     }
 }

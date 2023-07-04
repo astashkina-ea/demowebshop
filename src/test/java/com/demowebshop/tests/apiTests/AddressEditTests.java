@@ -26,7 +26,6 @@ public class AddressEditTests {
     String emailValue = config.getLoginAccount();
     String passwordValue = config.getPasswordAccount();
 
-
     @Test
     @DisplayName("Add address")
     void addAddressTest() {

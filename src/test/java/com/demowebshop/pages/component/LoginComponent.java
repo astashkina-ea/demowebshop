@@ -11,7 +11,6 @@ public class LoginComponent {
     private SelenideElement emailField = $("#Email"),
             passwordField = $("#Email");
 
-
     @Step("Open login page")
     public LoginComponent openPage() {
         open("/login");

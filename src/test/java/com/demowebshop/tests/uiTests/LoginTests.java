@@ -1,12 +1,10 @@
 package com.demowebshop.tests.uiTests;
 
 import com.demowebshop.api.LoginApi;
-import com.demowebshop.config.CredentialsConfig;
 import com.demowebshop.pages.MainPage;
 import com.demowebshop.pages.component.HeaderComponent;
 import com.demowebshop.pages.component.LoginComponent;
 import com.demowebshop.tests.UiTestBase;
-import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -19,14 +17,12 @@ import static com.demowebshop.api.LoginApi.authCookieKey;
 @Tag("ui")
 public class LoginTests extends UiTestBase {
 
-    private static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
-
     LoginComponent loginComponent = new LoginComponent();
     HeaderComponent headerComponent = new HeaderComponent();
     MainPage mainPage = new MainPage();
 
-    String emailValue = config.getLoginAccount();
-    String passwordValue = config.getPasswordAccount();
+    String emailValue = credentialsConfig.getLoginAccount();
+    String passwordValue = credentialsConfig.getPasswordAccount();
 
     @Test
     @DisplayName("Login from web")

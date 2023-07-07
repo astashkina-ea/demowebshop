@@ -13,7 +13,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
-public class UiTestBase {
+public class UiTestBase extends TestBase{
 
     private static WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
 

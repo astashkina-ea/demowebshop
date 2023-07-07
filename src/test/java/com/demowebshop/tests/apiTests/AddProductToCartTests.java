@@ -1,10 +1,8 @@
 package com.demowebshop.tests.apiTests;
 
 import com.demowebshop.api.LoginApi;
-import com.demowebshop.config.CredentialsConfig;
 import com.demowebshop.models.AddProductToCartResponse;
 
-import org.aeonbits.owner.ConfigFactory;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.jupiter.api.DisplayName;
@@ -14,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import static com.demowebshop.api.AddProductToCartApi.addProductToCartWithAuth;
 import static com.demowebshop.api.AddProductToCartApi.addProductToCartWithUnAuth;
 import static com.demowebshop.api.GetCartApi.getCart;
+import static com.demowebshop.tests.TestBase.credentialsConfig;
 import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,10 +20,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @Tag("api")
 public class AddProductToCartTests {
 
-    private static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
-
-    String emailValue = config.getLoginAccount();
-    String passwordValue = config.getPasswordAccount();
+    String emailValue = credentialsConfig.getLoginAccount();
+    String passwordValue = credentialsConfig.getPasswordAccount();
 
     int numberOfItems;
     int quantity = 3;

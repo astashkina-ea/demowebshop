@@ -1,9 +1,7 @@
 package com.demowebshop.tests.apiTests;
 
 import com.demowebshop.api.LoginApi;
-import com.demowebshop.config.CredentialsConfig;
 import com.github.javafaker.Faker;
-import org.aeonbits.owner.ConfigFactory;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.jupiter.api.DisplayName;
@@ -15,16 +13,15 @@ import java.util.Map;
 
 import static com.demowebshop.api.AddressEditApi.addressEdit;
 import static com.demowebshop.api.GetAddresses.getAddresses;
+import static com.demowebshop.tests.TestBase.credentialsConfig;
 import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.*;
 
 @Tag("api")
 public class AddressEditTests {
 
-    private static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
-
-    String emailValue = config.getLoginAccount();
-    String passwordValue = config.getPasswordAccount();
+    String emailValue = credentialsConfig.getLoginAccount();
+    String passwordValue = credentialsConfig.getPasswordAccount();
 
     @Test
     @DisplayName("Add address")

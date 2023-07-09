@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class LoginComponent {
 
     private SelenideElement emailField = $("#Email"),
-            passwordField = $("#Email");
+            passwordField = $("#Password");
 
     @Step("Open login page")
     public LoginComponent openPage() {
